@@ -90,10 +90,11 @@ run_analysis<-function(traningSetFileLocation, testSetFileLocation, featuresFile
    
    mergerdatawithlabeleddatadesc=merge(completedatasetwithNonfilteredcolumns, activity_labelsdata,all=TRUE)
    
-   write(mergerdatawithlabeleddatadesc,"UCI HAR Dataset/tidydataset.txt")
+   
   
   mergerdatawithlabeleddatadescDF<- as.data.frame(mergerdatawithlabeleddatadesc)
-  
+ 
+  write(mergerdatawithlabeleddatadescDF,"UCI HAR Dataset/tidydataset.txt") 
   head(mergerdatawithlabeleddatadescDF)
   avgsubjectmeans<-aggregate(value~subject+label, mergerdatawithlabeleddatadesc, mean)
 
